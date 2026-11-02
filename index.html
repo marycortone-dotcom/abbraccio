@@ -1,0 +1,125 @@
+
+```html
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mi manchi</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧸</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,600&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--n1:#1c2142;--n2:#3a3a6e;--rose:#e8788a;--gold:#f6c177;--cream:#fff2e6}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{
+  font-family:"DM Sans",system-ui,sans-serif;color:var(--cream);overflow:hidden;
+  background:radial-gradient(ellipse at 50% 100%,#6b3f6e 0%,var(--n2) 45%,var(--n1) 100%);
+  padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);
+}
+.glow{position:fixed;left:50%;bottom:-10%;width:90vmin;height:60vmin;transform:translateX(-50%);
+  background:radial-gradient(closest-side,rgba(246,193,119,.35),rgba(246,193,119,0));animation:br 5s ease-in-out infinite}
+@keyframes br{50%{opacity:.6;transform:translateX(-50%) scale(1.08)}}
+#stars{position:fixed;inset:0;pointer-events:none}
+.star{position:absolute;border-radius:50%;background:#fff;animation:tw 3.5s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.2}50%{opacity:.9}}
+main{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:clamp(8px,2vh,18px);padding:20px;text-align:center}
+h1{font-family:Fraunces,Georgia,serif;font-style:italic;font-weight:300;font-size:clamp(3rem,13vw,7rem);line-height:1;
+  letter-spacing:-.02em;text-shadow:0 6px 40px rgba(20,24,69,.6)}
+h1 b{font-weight:600;color:var(--gold)}
+.sub{font-size:clamp(1rem,2.6vw,1.25rem);max-width:30ch;line-height:1.45;min-height:3em;opacity:.92}
+#scene{width:min(440px,84vw);filter:drop-shadow(0 18px 30px rgba(0,0,0,.45))}
+#hug{transform-origin:200px 360px;animation:breathe 4.5s ease-in-out infinite}
+@keyframes breathe{50%{transform:scale(1.015,1.025)}}
+body.hugged #hug{animation:squeeze 1.1s ease-in-out 2}
+@keyframes squeeze{50%{transform:scale(1.06,.97)}}
+button{font:700 1.05rem "DM Sans",sans-serif;cursor:pointer;border:0;border-radius:999px;padding:15px 34px;
+  background:var(--cream);color:#3a1d33;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .2s}
+button:hover{transform:translateY(-3px) scale(1.04)}
+button:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.heart{position:fixed;z-index:4;bottom:22%;font-size:1.5rem;pointer-events:none;animation:up linear forwards}
+@keyframes up{to{transform:translate(var(--x),-75vh) rotate(20deg);opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="stars" aria-hidden="true"></div>
+<div class="glow" aria-hidden="true"></div>
+
+<main>
+  <h1>Mi <b>manchi</b></h1>
+
+  <svg id="scene" viewBox="0 0 400 330" role="img" aria-label="Due persone abbracciate sotto una coperta a quadri">
+    <defs>
+      <pattern id="plaid" width="44" height="44" patternUnits="userSpaceOnUse" patternTransform="rotate(-8)">
+        <rect width="44" height="44" fill="#e8788a"/>
+        <rect x="8" width="9" height="44" fill="#f6c177" opacity=".75"/>
+        <rect y="26" width="44" height="7" fill="#fff2e6" opacity=".6"/>
+        <rect x="28" width="3" height="44" fill="#9a3f5a" opacity=".6"/>
+        <rect y="6" width="44" height="3" fill="#9a3f5a" opacity=".5"/>
+      </pattern>
+      <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#000" stop-opacity=".3"/>
+      </linearGradient>
+    </defs>
+    <g id="hug">
+      <g transform="rotate(8 160 120)">
+        <circle cx="158" cy="112" r="46" fill="#f4d3c2"/>
+        <path d="M112 108c0-32 22-52 50-50 24 2 42 20 42 44-14-8-30-14-46-14-18 0-34 8-46 20z" fill="#5a3a4a"/>
+        <path d="M138 124q8 6 16 0" stroke="#7a4a4a" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <path d="M168 124q8 6 16 0" stroke="#7a4a4a" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <path d="M150 142q12 10 24 0" stroke="#c0605f" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <circle cx="136" cy="138" r="7" fill="#e8788a" opacity=".45"/>
+      </g>
+      <g transform="rotate(-8 240 120)">
+        <circle cx="242" cy="112" r="46" fill="#d9a98f"/>
+        <path d="M196 112c0-34 20-54 48-54 28 0 46 22 46 52-6-12-18-22-36-24-18 0-36 8-58 26z" fill="#2e2236"/>
+        <path d="M222 124q8 6 16 0" stroke="#5a3a3a" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <path d="M252 124q8 6 16 0" stroke="#5a3a3a" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <path d="M232 142q12 10 24 0" stroke="#b0504f" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <circle cx="264" cy="138" r="7" fill="#e8788a" opacity=".45"/>
+      </g>
+      <path d="M62 330C58 218 112 158 200 156c88 2 142 62 138 174z" fill="url(#plaid)"/>
+      <path d="M62 330C58 218 112 158 200 156c88 2 142 62 138 174z" fill="url(#shade)"/>
+      <path d="M150 168c20 16 80 16 100 0" stroke="#fff2e6" stroke-width="5" fill="none" stroke-linecap="round" opacity=".7"/>
+      <circle cx="132" cy="236" r="14" fill="#f4d3c2"/>
+      <circle cx="268" cy="236" r="14" fill="#d9a98f"/>
+      <path d="M62 330h276" stroke="#f6c177" stroke-width="8" stroke-dasharray="3 9" stroke-linecap="round"/>
+    </g>
+  </svg>
+
+  <p class="sub" id="sub">Ti mando una coperta morbida e un abbraccio, finché non ci vediamo.</p>
+  <button id="btn">Ricevi l’abbraccio</button>
+</main>
+
+<script>
+(function(){
+  var s=document.getElementById('stars'),h='';
+  for(var i=0;i<70;i++){var z=Math.random()*2.2+.8;
+    h+='<i class="star" style="left:'+Math.random()*100+'%;top:'+Math.random()*60+'%;width:'+z+'px;height:'+z+'px;animation-delay:-'+Math.random()*3+'s"></i>';}
+  s.innerHTML=h;
+})();
+var sub=document.getElementById('sub'),btn=document.getElementById('btn'),n=0;
+var lines=["Un abbraccio lungo, stretto, sotto la coperta più morbida che ho.","Sappi che ti penso. Sempre. Anche adesso.","Mi manchi. Tanto."];
+function hearts(k){
+  var ic=['💗','🤍','✨','💞','🧸'];
+  for(var i=0;i<k;i++)(function(i){setTimeout(function(){
+    var e=document.createElement('span');e.className='heart';e.textContent=ic[i%ic.length];
+    e.style.left=(20+Math.random()*60)+'vw';e.style.setProperty('--x',(Math.random()*120-60)+'px');
+    e.style.fontSize=(1.1+Math.random()*1.4)+'rem';e.style.animationDuration=(3.5+Math.random()*3)+'s';
+    document.body.appendChild(e);setTimeout(function(){e.remove()},7000);
+  },i*140)})(i);
+}
+btn.addEventListener('click',function(){
+  document.body.classList.remove('hugged');void document.body.offsetWidth;document.body.classList.add('hugged');
+  sub.textContent=lines[Math.min(n,lines.length-1)];n++;
+  btn.textContent=n<lines.length?'Ancora uno':'Un altro, sempre';
+  hearts(22);
+});
+</script>
+</body>
+</html>
+```
